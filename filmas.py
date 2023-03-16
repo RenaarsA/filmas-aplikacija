@@ -5,12 +5,13 @@ import webbrowser
 from cgitb import text
 from tkinter import Button, Entry, Label, Toplevel
 import pyperclip
+from tkinter import *
 
 #tk loga izveide
 app = tk.Tk()
 app.title('Movie app')
 app.eval('tk::PlaceWindow . center')
-app.geometry('200x100')
+app.geometry('240x100')
 label = Label(app)
 
 
@@ -31,7 +32,8 @@ def app1():
 #izveido jaunu logu
 
     app = tk.Tk()
-    app.title("Movie List")
+    app.title("Movie Search")
+    app.geometry('320x60')
     
 
     movie_label = tk.Label(app,text="Enter movie name:").grid(row=1,column=2) #filmas loga nosaukums
@@ -49,8 +51,8 @@ def app1():
 
 
 
-btn = tk.Button(app,text='Search Movie', command=app1).grid(row=2,column=1) #poga ar kuru atverās jauns logs kurā atrodās meklēšanas funckija
-
+btn = tk.Button(app,text='Search Movie', command=app1) #poga ar kuru atverās jauns logs kurā atrodās meklēšanas funckija
+btn.place(relx=0.5, rely=0.2, anchor=CENTER)
 #funkcija nejaušu datu izvēle no text faila
 
 def randomapp(): 
@@ -76,7 +78,7 @@ def randomapp():
 #izveido jaunu logu
 
     root = tk.Tk()
-    root.title("Movie List")
+    root.title("Movie Generator")
     root.geometry('400x150')
 
     movie_label = tk.Label(root, text="Enter a movie:") #
@@ -95,7 +97,7 @@ def randomapp():
     result_label.pack(side="left")
 
     copy_button = tk.Button(result_frame, text="Copy", command=copy_result).pack(side="bottom", padx=10) #poga ar kopēšanas funkciju
-    #copy_button
+    
 
     movie_label.pack()
     movie_entry.pack()
@@ -107,5 +109,6 @@ def randomapp():
 
 
 
-btn1 = tk.Button(app,text='Movie Generator', command=randomapp).grid(row=3,column=1) #poga ar kuru atverās jauns logs kurā atrodās nejaušas izvēles funckija
+btn1 = tk.Button(app,text='Movie Generator', command=randomapp) #poga ar kuru atverās jauns logs kurā atrodās nejaušas izvēles funckija
+btn1.place(relx=0.5, rely=0.5, anchor=CENTER)
 app.mainloop()
